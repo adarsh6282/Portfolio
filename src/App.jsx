@@ -701,7 +701,7 @@ const Portfolio = () => {
         .stat-card {
           border: 2px solid var(--ink);
           padding: 1.5rem; position: relative;
-          transition: background .25s;
+          transition: background .5s ease, transform .5s ease;
         }
         .stat-card::after {
           content: ''; position: absolute; inset: 4px;
@@ -710,6 +710,10 @@ const Portfolio = () => {
         .stat-card:hover { background: var(--ink); }
         .stat-card:hover .snum { color: var(--cream); }
         .stat-card:hover .slbl { color: #6A6050; }
+        .stat-card-1:hover {transform:translateX(-20px) translateY(-20px)}
+        .stat-card-2:hover {transform:translateX(20px) translateY(-20px)}
+        .stat-card-3:hover {transform:translateX(-20px) translateY(20px)}
+        .stat-card-4:hover {transform:translateX(20px) translateY(20px)}
         .snum {
           font-family: 'Bebas Neue', sans-serif;
           font-size: 3.2rem; color: var(--red);
@@ -1106,12 +1110,15 @@ const Portfolio = () => {
             </div>
             <div className="about-stats">
               {[
-                { num: "5+",   label: "Projects Built" },
-                { num: "1+",   label: "Year Training" },
-                { num: "25+",  label: "Technologies" },
+                { num: "5+", label: "Projects Built" },
+                { num: "1+", label: "Year Training" },
+                { num: "25+", label: "Technologies" },
                 { num: "100%", label: "Self-Motivated" },
-              ].map((s) => (
-                <div key={s.label} className="stat-card">
+              ].map((s, index) => (
+                <div
+                  key={s.label}
+                  className={`stat-card stat-card-${index + 1}`}
+                >
                   <div className="snum">{s.num}</div>
                   <div className="slbl">{s.label}</div>
                 </div>
