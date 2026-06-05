@@ -43,7 +43,6 @@ import { MdVideoCall } from "react-icons/md";
 import { FiExternalLink } from "react-icons/fi";
 import profileImage from "./assets/profileImage.jpg";
 
-/* ─── Custom Cursor ─────────────────────────────────────── */
 const Cursor = () => {
   const [dot, setDot] = useState({ x: -100, y: -100 });
   const [ring, setRing] = useState({ x: -100, y: -100 });
@@ -85,7 +84,6 @@ const Cursor = () => {
 
   return (
     <>
-      {/* Inner dot */}
       <div
         style={{
           position: "fixed",
@@ -101,7 +99,7 @@ const Cursor = () => {
           transition: "width .15s,height .15s,background .2s",
         }}
       />
-      {/* Outer SVG ring */}
+
       <div
         style={{
           position: "fixed",
@@ -116,7 +114,7 @@ const Cursor = () => {
         }}
       >
         <svg width="54" height="54" viewBox="0 0 54 54" overflow="visible">
-          {/* Rotating dashed outer ring */}
+
           <circle
             cx="27"
             cy="27"
@@ -130,7 +128,7 @@ const Cursor = () => {
               animation: "cursorSpin 7s linear infinite",
             }}
           />
-          {/* Static inner thin ring */}
+
           <circle
             cx="27"
             cy="27"
@@ -140,12 +138,12 @@ const Cursor = () => {
             strokeWidth="0.5"
             opacity="0.3"
           />
-          {/* Crosshair ticks – cardinal */}
+
           <line x1="27" y1="3"  x2="27" y2="11" stroke="#C8291E" strokeWidth="2" strokeLinecap="round" />
           <line x1="27" y1="43" x2="27" y2="51" stroke="#C8291E" strokeWidth="2" strokeLinecap="round" />
           <line x1="3"  y1="27" x2="11" y2="27" stroke="#C8291E" strokeWidth="2" strokeLinecap="round" />
           <line x1="43" y1="27" x2="51" y2="27" stroke="#C8291E" strokeWidth="2" strokeLinecap="round" />
-          {/* Diagonal ticks */}
+
           <line x1="10" y1="10" x2="14.5" y2="14.5" stroke="#111" strokeWidth="0.8" strokeLinecap="round" opacity="0.4" />
           <line x1="44" y1="10" x2="39.5" y2="14.5" stroke="#111" strokeWidth="0.8" strokeLinecap="round" opacity="0.4" />
           <line x1="10" y1="44" x2="14.5" y2="39.5" stroke="#111" strokeWidth="0.8" strokeLinecap="round" opacity="0.4" />
@@ -156,7 +154,6 @@ const Cursor = () => {
   );
 };
 
-/* ─── Rotating Badge SVG ────────────────────────────────── */
 const RotatingBadge = () => (
   <div
     style={{
@@ -187,7 +184,7 @@ const RotatingBadge = () => (
       <circle cx="60" cy="60" r="34" fill="none" stroke="#C8291E" strokeWidth="0.8" />
       <circle cx="60" cy="60" r="26" fill="none" stroke="#C8291E" strokeWidth="0.3" opacity="0.5" />
       <circle cx="60" cy="60" r="4" fill="#C8291E" />
-      {/* Small crosshair inside badge */}
+
       <line x1="60" y1="52" x2="60" y2="57" stroke="#C8291E" strokeWidth="1" />
       <line x1="60" y1="63" x2="60" y2="68" stroke="#C8291E" strokeWidth="1" />
       <line x1="52" y1="60" x2="57" y2="60" stroke="#C8291E" strokeWidth="1" />
@@ -196,7 +193,6 @@ const RotatingBadge = () => (
   </div>
 );
 
-/* ─── Corner Registration Marks ─────────────────────────── */
 const RegMark = ({ pos }) => {
   const s = {
     tl: { top: 24, left: 24 },
@@ -217,7 +213,6 @@ const RegMark = ({ pos }) => {
   );
 };
 
-/* ─── Section Header ─────────────────────────────────────── */
 const SectionHeader = ({ num, label, title, light = false }) => (
   <div style={{ marginBottom: "3rem" }}>
     <div style={{ display: "flex", alignItems: "center", gap: "0.7rem", marginBottom: "0.6rem" }}>
@@ -247,9 +242,7 @@ const SectionHeader = ({ num, label, title, light = false }) => (
   </div>
 );
 
-/* ══════════════════════════════════════════════════════════
-   MAIN PORTFOLIO
-══════════════════════════════════════════════════════════ */
+
 const Portfolio = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
@@ -276,7 +269,6 @@ const Portfolio = () => {
     setIsMenuOpen(false);
   };
 
-  /* ── Data ─────────────────────────────────────────────── */
   const skillCategories = [
     {
       category: "Frontend",
@@ -331,6 +323,15 @@ const Portfolio = () => {
           ),
           color: "#111",
         },
+        {
+          name: "SaaS",
+          icon: (
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M6 19h12a4 4 0 0 0 0-8 6 6 0 0 0-11.31-2.69A4.5 4.5 0 0 0 6 19z" />
+            </svg>
+          ),
+          color: "#2563EB",
+        }
       ],
     },
   ];
@@ -384,10 +385,9 @@ const Portfolio = () => {
     },
   ];
 
-  /* ── JSX ──────────────────────────────────────────────── */
+
   return (
     <div className="pf">
-      {/* ── Global Styles ─────────────────────────────────── */}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
@@ -765,7 +765,7 @@ const Portfolio = () => {
           margin-bottom: .45rem; height: 38px;
           transition: transform .3s;
         }
-        .skill-card:hover .skill-icon { transform: scale(1.15) rotate(-5deg); }
+        .skill-card:hover .skill-icon { transform: scale(1.15) rotateY(720deg); }
         .skill-name {
           font-family: 'JetBrains Mono', monospace;
           font-size: 0.67rem; font-weight: 500; letter-spacing: .4px;
@@ -971,10 +971,9 @@ const Portfolio = () => {
         }
       `}</style>
 
-      {/* ── Custom Cursor ───────────────────────────────── */}
+      {/* CURSOR */}
       <Cursor />
 
-      {/* ── NAV ─────────────────────────────────────────── */}
       <nav>
         <div className="nav-inner">
           <div className="logo" onClick={() => scrollToSection("home")}>
@@ -999,7 +998,7 @@ const Portfolio = () => {
         </div>
       </nav>
 
-      {/* ── MOBILE OVERLAY ──────────────────────────────── */}
+      {/* MOBILE ORIENTATION */}
       <div className={`mob-overlay ${isMenuOpen ? "open" : ""}`}>
         <button className="mob-close" onClick={() => setIsMenuOpen(false)}>
           <X size={28} />
@@ -1015,20 +1014,17 @@ const Portfolio = () => {
         ))}
       </div>
 
-      {/* ══════════════════════ HERO ═══════════════════════ */}
+      {/* HERO */}
       <section id="home">
         <div className="hero-section">
-          {/* Decorative registration marks */}
           <RegMark pos="tl" />
           <RegMark pos="tr" />
           <RegMark pos="bl" />
           <RegMark pos="br" />
 
-          {/* Rotating stamp badge */}
           <RotatingBadge />
 
-          <div className="hero-grid">
-            {/* Left */}
+          <div className="hero-grid"> 
             <div>
               <div className="hero-eyebrow">
                 <div className="eyebrow-line" />
@@ -1053,7 +1049,7 @@ const Portfolio = () => {
               </div>
             </div>
 
-            {/* Right – photo */}
+            {/* PHOTO */}
             <div className="hero-img-wrap">
               <div className="hero-img-frame">
                 <div className="img-shadow" />
@@ -1064,7 +1060,7 @@ const Portfolio = () => {
                     <span className="cap-loc">KERALA, INDIA</span>
                   </div>
                 </div>
-                {/* Corner marks */}
+
                 <div className="cmark cmark-tl" />
                 <div className="cmark cmark-tr" />
                 <div className="cmark cmark-bl" />
@@ -1073,7 +1069,6 @@ const Portfolio = () => {
             </div>
           </div>
 
-          {/* Scroll hint */}
           <div className="scroll-hint">
             <span className="scroll-hint-txt">Scroll</span>
             <ChevronDown size={18} color="var(--mid)" />
@@ -1083,7 +1078,7 @@ const Portfolio = () => {
 
       <div className="sec-divider" />
 
-      {/* ══════════════════════ ABOUT ══════════════════════ */}
+      {/* ABOUT */}
       <section id="about">
         <div className="sec">
           <span className="ghost-n">01</span>
@@ -1128,7 +1123,7 @@ const Portfolio = () => {
 
       <div className="sec-divider" />
 
-      {/* ══════════════════════ SKILLS ═════════════════════ */}
+      {/* SKILLS */}
       <section id="skills">
         <div className="sec">
           <span className="ghost-n">02</span>
@@ -1159,7 +1154,7 @@ const Portfolio = () => {
 
       <div className="sec-divider" />
 
-      {/* ═══════════════════ EXPERIENCE ════════════════════ */}
+      {/* EXPERIENCE */}
       <section id="experience">
         <div className="sec">
           <span className="ghost-n">03</span>
@@ -1187,7 +1182,7 @@ const Portfolio = () => {
 
       <div className="sec-divider" />
 
-      {/* ══════════════════════ PROJECTS ═══════════════════ */}
+      {/* PROJECTS */}
       <section id="projects">
         <div className="sec">
           <span className="ghost-n">04</span>
@@ -1229,7 +1224,7 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* ══════════════════════ CONTACT ════════════════════ */}
+      {/* CONTACT */}
       <section id="contact" className="sec-dark">
         <div className="sec-dark-inner">
           <SectionHeader num="05" label="Contact" title="GET IN TOUCH" light />
@@ -1266,7 +1261,7 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* ══════════════════════ FOOTER ═════════════════════ */}
+      {/*FOOTER*/}
       <footer>
         <p className="footer-txt">
           © 2026 Adarsh KP — Built with <span className="hb">♥</span> — All rights reserved
