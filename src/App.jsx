@@ -41,7 +41,7 @@ import { GiUnlocking } from "react-icons/gi";
 import { FaServer } from "react-icons/fa";
 import { MdVideoCall } from "react-icons/md";
 import { FiExternalLink } from "react-icons/fi";
-import profileImage from "./assets/profileImage.jpg";
+import image from "./assets/image.png"
 
 const Cursor = () => {
   const [dot, setDot] = useState({ x: -100, y: -100 });
@@ -1058,7 +1058,7 @@ const Portfolio = () => {
               <div className="hero-img-frame">
                 <div className="img-shadow" />
                 <div className="img-box">
-                  <img src={profileImage} alt="Adarsh KP" />
+                  <img src={image} alt="Adarsh KP" />
                   <div className="img-caption">
                     <span className="cap-name">Adarsh KP</span>
                     <span className="cap-loc">KERALA, INDIA</span>
