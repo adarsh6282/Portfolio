@@ -41,7 +41,8 @@ import { GiUnlocking } from "react-icons/gi";
 import { FaServer } from "react-icons/fa";
 import { MdVideoCall } from "react-icons/md";
 import { FiExternalLink } from "react-icons/fi";
-import image from "./assets/image.png"
+import image from "./assets/image.png";
+import { RiNextjsLine } from "react-icons/ri";
 
 const Cursor = () => {
   const [dot, setDot] = useState({ x: -100, y: -100 });
@@ -273,6 +274,7 @@ const Portfolio = () => {
     {
       category: "Frontend",
       skills: [
+        { name: "Next.js",     icon: <RiNextjsLine />,          color: "#000000" },
         { name: "React.js",     icon: <DiReact />,              color: "#61DAFB" },
         { name: "Redux Toolkit",icon: <Boxes />,                color: "#764ABC" },
         { name: "JavaScript",   icon: <DiJavascript1 />,        color: "#F7DF1E" },
